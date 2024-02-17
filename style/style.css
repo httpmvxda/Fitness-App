@@ -10,23 +10,34 @@
 .logo
 {
     width:  auto;
-    height: 162px;
+    height: 142px;
     margin-top: -20px;
     margin-bottom: -20px;
-    margin-right: 50px;
+    margin-left: -20px;
+    display: flex;
+    align-items: center;
 
+
+}
+.mainh1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    
+    
 }
 .topmenu
 {
-    
+    display: flex;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
     background-color: #f5f7f1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+    
     border-bottom: 1px solid;
     border-color: rgb(197, 193, 193);
     box-shadow: 0px 0px 25px gray;
@@ -35,14 +46,92 @@
     
 }
 
+#b-breakfast
+{
+    margin-left: 110px;
+    margin-bottom: 20px;
+}
+#b-2breakfast
+{
+    
+    margin-bottom: 20px;
+}
+#b-lunch
+{
+    margin-left: 154px;
+    margin-bottom: 20px;
+}
+#b-snack
+{
+    margin-left: 108px;
+    margin-bottom: 20px;
+}
+#b-dinner
+{
+    margin-left: 138px;
+    margin-bottom: 20px;
+}
+
+
+.container
+{
+    background-color: #f5f7f1;
+    height: 100vh;
+}
 .navkcal
 {
     display: flex;
     justify-content: center;
     align-content: center;
+    margin-top: 10px;
    
 }
 .main-lista
 {
+    margin-top: 20px;
     list-style-type: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: rgb(86, 114, 78);
+    
 }
+
+.button-lista
+{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #387141; /* Kolor tła przycisku */
+    color: white; /* Kolor tekstu */
+    font-size: 30px; /* Rozmiar tekstu */
+    border: none; /* Usunięcie ramki */
+    cursor: pointer; /* Zmiana kursora po najechaniu */
+    margin-left: 30px;
+    outline: none; /* Usunięcie konturu po kliknięciu */
+    
+    
+    
+}
+
+
+li
+{
+    padding: 10px;
+   
+}
+
+.progress-bars {
+    margin-top: 20px;
+  }
+  
+  .progress-bar {
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  
+  .progress span {
+    margin-left: 10px;
+  }
