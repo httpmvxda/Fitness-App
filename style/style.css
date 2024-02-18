@@ -2,109 +2,136 @@
 
 *
 {
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: auto;
     box-sizing: border-box;
+    
+}
+#container
+{
+    background-image: url(/images/background.png);
+    
+
     
 }
 .logo
 {
     width:  auto;
-    height: 142px;
-    margin-top: -20px;
-    margin-bottom: -20px;
-    margin-left: -20px;
+    height: 182px;
+    margin: auto;
+    margin-top: -35px;
     display: flex;
     align-items: center;
+    justify-content: center;
 
 
 }
 .mainh1
 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: auto;
+    justify-content: space-between;
+    align-items: center;    
+    font-size: 48px;
+    margin-left: 80px;
+
     
     
 }
 .topmenu
 {
-    display: flex;
+    
+    height: 160px;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
-    background-color: #f5f7f1;
-    
-    
-    border-bottom: 1px solid;
-    border-color: rgb(197, 193, 193);
-    box-shadow: 0px 0px 25px gray;
-    
-    
-    
+    background-color: #f5f7f1; 
+}
+.foodlist
+{
+    min-height: 52px;
+    height: auto;
+    border: 2px solid;
+    border-radius: 20px;
+    background-color: #eceee8;
 }
 
 #b-breakfast
 {
+    margin-top: 30px;
     margin-left: 110px;
+    margin-bottom: 20px;
+}
+#b-2breakfast
+{
     margin-bottom: 20px;
 }
 #b-lunch
 {
     margin-left: 154px;
+    margin-bottom: 20px;
 }
 #b-snack
 {
     margin-left: 108px;
-}
+    margin-bottom: 20px;
+} 
 #b-dinner
 {
     margin-left: 138px;
+    margin-bottom: 20px;
 }
 
 
 .container
 {
     background-color: #f5f7f1;
-    height: 100vh;
+    
 }
 .navkcal
 {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-top: 10px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    height: 100%;
+    margin-bottom: 80px;
    
 }
 .main-lista
 {
-    margin-top: 20px;
+    
     list-style-type: none;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 22px;
     color: rgb(86, 114, 78);
+    margin: auto;
     
 }
 
-.button-lista
+.button-list
 {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background-color: #387141; /* Kolor tła przycisku */
-    color: white; /* Kolor tekstu */
-    font-size: 30px; /* Rozmiar tekstu */
-    border: none; /* Usunięcie ramki */
-    cursor: pointer; /* Zmiana kursora po najechaniu */
+    background-color: #387141; 
+    color: white; 
+    font-size: 30px; 
+    border: none; 
+    cursor: pointer; 
     margin-left: 30px;
-    outline: none; /* Usunięcie konturu po kliknięciu */
-    
-    
+    outline: none; 
+        
+}
+
+.button-list:hover
+{
+    background-color: rgb(89, 130, 86);
     
 }
+
 
 
 li
@@ -113,17 +140,47 @@ li
    
 }
 
-.progress-bars {
-    margin-top: 20px;
+.background
+{
+    background-color: #f5f7f1;
+    
+    height: 150px;
+    
+    display: flex;
+    align-content: center;
+    margin: auto;
+    
+    
+}
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px; /* Możesz dostosować szerokość według potrzeb */
+    
+    font-size: large;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    color: #1b3d21;
+    
+
+  }
+  
+  .progress-label {
+    margin-bottom: 3px; /* Dodatkowy margines pod etykietą */
   }
   
   .progress-bar {
-    margin-bottom: 10px;
+    height: 20px; 
+    width: 160px; 
+    background-color: #cbd7cb; /* Kolor paska postępu */
+    border: 1px solid;
+    border-radius: 15px;
+    border-color: #38714133;
+    
   }
   
   
   
   
-  .progress span {
-    margin-left: 10px;
-  }
+  

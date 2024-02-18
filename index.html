@@ -10,46 +10,52 @@
 <body>
 
 
-    <div class="container">
+    <div id="container">
         <header class="topmenu">
             <img class="logo" src="/images/FITNESS APP.png" alt="logo Fitness App">
-            <tittle class="mainh1">Kalkulator Kalorii</tittle>
+            
         </header>
 
         <nav class="navkcal">
             <ul class="main-lista">
                 <li>
                   Śniadanie
-                  <button id="b-breakfast"class="button-lista">+</button>
-                  <div>
+                  <button id="b-breakfast"class="button-list">+</button>
+                  <div class="foodlist">
+                    <ul>
+                      
+                    </ul>
 
                   </div>
                 </li>
                 <li>
                   Drugie Śniadanie
-                  <button id="b-2breakfast" class="button-lista">+</button>
-                  <div>
+                  <button id="b-2breakfast" class="button-list">+</button>
+                  <div class="foodlist">
+                    <ul>
+
+                    </ul>
                     
                   </div>
                 </li>
                 <li>
                   Obiad
-                  <button id="b-lunch" class="button-lista">+</button>
-                  <div>
+                  <button id="b-lunch" class="button-list">+</button>
+                  <div class="foodlist">
                     
                   </div>
                 </li>
                 <li>
                   Przekąska
-                  <button id="b-snack" class="button-lista">+</button>
-                  <div>
+                  <button id="b-snack" class="button-list">+</button>
+                  <div class="foodlist">
                     
                   </div>
                 </li>
                 <li>
                   Kolacja
-                  <button id="b-dinner" class="button-lista">+</button>
-                  <div>
+                  <button id="b-dinner" class="button-list">+</button>
+                  <div class="foodlist">
                     
                   </div>
                 </li>
@@ -59,23 +65,27 @@
 
 
         </nav>
-
-        <div class="progress-bars">
-            <div class="progress-bar">
-              <div class="progress" style="width: 70%;"></div>
-              <span>Węglowodany</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress" style="width: 50%;"></div>
-              <span>Białko</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress" style="width: 30%;"></div>
-              <span>Tłuszcze</span>
-            </div>
+      <footer class="background">
+        
+        
+          <div class="progress-container">
+            <div class="progress-label">Białko</div>
+            <div class="progress-bar"></div>
           </div>
-
-
+          <div class="progress-container">
+            <div class="progress-label">Węglowodany</div>
+            <div class="progress-bar"></div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-label">Tłuszcze</div>
+            <div class="progress-bar"></div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-label">Kalorie</div>
+            <div class="progress-bar"></div>
+        </footer>
+      
+       
 
     </div>
 
@@ -83,16 +93,9 @@
 
 
 
+
+
 </body>
-
-
-
-
-
-
-
-
-
 
 
 </html>
