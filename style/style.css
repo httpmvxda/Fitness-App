@@ -2,8 +2,8 @@
 
 *
 {
-    margin: auto;
-    padding: auto;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     
 }
@@ -23,6 +23,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    
 
 
 }
@@ -50,10 +52,13 @@
 .foodlist
 {
     min-height: 52px;
-    height: auto;
     border: 2px solid;
     border-radius: 20px;
     background-color: #eceee8;
+    width: 260px;
+    word-wrap:break-word;
+    font-size: 18px;
+    
 }
 
 #b-breakfast
@@ -61,6 +66,7 @@
     margin-top: 30px;
     margin-left: 110px;
     margin-bottom: 20px;
+    
 }
 #b-2breakfast
 {
@@ -107,7 +113,7 @@
     font-weight: 600;
     font-size: 22px;
     color: rgb(86, 114, 78);
-    margin: auto;
+    
     
 }
 
@@ -123,6 +129,9 @@
     cursor: pointer; 
     margin-left: 30px;
     outline: none; 
+
+    
+    
         
 }
 
@@ -134,11 +143,21 @@
 
 
 
-li
+.foodcontainer
 {
     padding: 10px;
+    margin-left: 37px;
+    margin-top: 5px;
+    margin-bottom: 5px;
    
 }
+
+.main-meal
+{
+   
+   margin-bottom: 30px;
+}
+
 
 .background
 {
@@ -156,9 +175,10 @@ li
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100px; /* Możesz dostosować szerokość według potrzeb */
-    
-    font-size: large;
+    width: 300px; 
+    margin: auto;
+    padding: 30px;
+    font-size: 20px;
     font-weight: 400;
     font-family: "Poppins", sans-serif;
     color: #1b3d21;
@@ -167,16 +187,18 @@ li
   }
   
   .progress-label {
-    margin-bottom: 3px; /* Dodatkowy margines pod etykietą */
+    margin-bottom: 3px; 
+
   }
   
   .progress-bar {
     height: 20px; 
-    width: 160px; 
-    background-color: #cbd7cb; /* Kolor paska postępu */
+    width: 190px; 
+    background-color: #cbd7cb;
     border: 1px solid;
     border-radius: 15px;
     border-color: #38714133;
+    margin-top: 5px;
     
   }
   
