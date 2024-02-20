@@ -2,38 +2,36 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/responsive.css" />
     <title>Fitness App</title>
-    <link rel="stylesheet" href="/style/style.css">
 </head>
 
 <body>
-
-
     <div id="container">
         <header class="topmenu">
-            <img class="logo" src="/images/FITNESS APP.png" alt="logo Fitness App">
-            
+            <img class="logo" src="/images/FITNESS APP.png" alt="logo Fitness App" />
         </header>
-
         <nav class="navkcal">
             <ul class="main-lista">
                 <li class="main-meal">
-                  Śniadanie
-                  <button id="b-breakfast"class="button-list">+</button>
+                  <div class="meal-container">
+                    <span>Śniadanie</span>
+                    <button id="b-breakfast"class="button-list">&plus;</button>
+                  </div>
                   <div class="foodlist">
-                    <ul>
-                      
-                    </ul>
-
+                    
                   </div>
                 </li>
                 <li class="main-meal">
-                  Drugie Śniadanie
-                  <button id="b-2breakfast" class="button-list">+</button>
+                  <div class="meal-container">
+                    <span>Drugie Śniadanie</span>
+                    <button id="b-2breakfast" class="button-list">&plus;</button>
+                  </div>
                   <div class="foodlist">
-                    <ul class="foodcontainer">
-                      <li>Jajecznica sssssssssssssssssssssssssssss</li>
+                    <ul class="foodcontainer hidden">
+                      <li>Jajecznica</li>
                       <li>Kiełbasa</li>
                       <li>Herbata</li>
                       <li>Masło</li>
@@ -49,67 +47,54 @@
                       <li>Herbata</li>
                       <li>Masło</li>
                     </ul>
-                    
                   </div>
                 </li>
                 <li class="main-meal">
-                  Obiad
-                  <button id="b-lunch" class="button-list">+</button>
+                  <div class="meal-container">
+                    <span>Obiad</span>
+                    <button id="b-lunch" class="button-list">&plus;</button>
+                  </div>
                   <div class="foodlist">
                     
                   </div>
                 </li>
                 <li class="main-meal">
-                  Przekąska
-                  <button id="b-snack" class="button-list">+</button>
+                  <div class="meal-container">
+                    <span>Przekąska</span>
+                    <button id="b-snack" class="button-list">&plus;</button>
+                  </div>
                   <div class="foodlist">
                     
                   </div>
                 </li>
                 <li class="main-meal">
-                  Kolacja
-                  <button id="b-dinner" class="button-list">+</button>
+                  <div class="meal-container">
+                    <span>Kolacja</span>
+                    <button id="b-dinner" class="button-list">&plus;</button>
+                  </div>
                   <div class="foodlist">
                     
                   </div>
                 </li>
-                
             </ul>
-
-
-
         </nav>
-      <footer class="background">
-        
-        
-          <div class="progress-container">
+        <footer class="background">
+          <div class="progress-container _1">
             <div class="progress-label">Białko (liczba)</div>
             <div class="progress-bar"></div>
           </div>
-          <div class="progress-container">
+          <div class="progress-container _2">
             <div class="progress-label">Węglowodany (liczba)</div>
             <div class="progress-bar"></div>
           </div>
-          <div class="progress-container">
+          <div class="progress-container _3" >
             <div class="progress-label">Tłuszcze (liczba)</div>
             <div class="progress-bar"></div>
           </div>
-          <div class="progress-container">
+          <div class="progress-container _4">
             <div class="progress-label">Kalorie (liczba)</div>
             <div class="progress-bar"></div>
-      </footer>
-      
-       
-
+        </footer>
     </div>
-
-
-
-
-
-
-
 </body>
-
-
 </html>

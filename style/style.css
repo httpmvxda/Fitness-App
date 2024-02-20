@@ -1,208 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
 }
-#container
-{
+
+#container {
     background-image: url(/images/background.png);
-    
-
-    
 }
-.logo
-{
-    width:  auto;
-    height: 182px;
-    margin: auto;
-    margin-top: -35px;
-    display: flex;
-    align-items: center;
+
+.logo {
     justify-content: center;
-    
-    
-
-
-}
-.mainh1
-{
+    align-items: center;
     display: flex;
+    width: 350px;
+    height: 100%;
+}
+
+
+.mainh1 {
     justify-content: space-between;
     align-items: center;    
     font-size: 48px;
-    margin-left: 80px;
-
-    
-    
-}
-.topmenu
-{
-    
-    height: 160px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background-color: #f5f7f1; 
-}
-.foodlist
-{
-    min-height: 52px;
-    border: 2px solid;
-    border-radius: 20px;
-    background-color: #eceee8;
-    width: 260px;
-    word-wrap:break-word;
-    font-size: 18px;
-    
-}
-
-#b-breakfast
-{
-    margin-top: 30px;
-    margin-left: 110px;
-    margin-bottom: 20px;
-    
-}
-#b-2breakfast
-{
-    margin-bottom: 20px;
-}
-#b-lunch
-{
-    margin-left: 154px;
-    margin-bottom: 20px;
-}
-#b-snack
-{
-    margin-left: 108px;
-    margin-bottom: 20px;
-} 
-#b-dinner
-{
-    margin-left: 138px;
-    margin-bottom: 20px;
-}
-
-
-.container
-{
-    background-color: #f5f7f1;
-    
-}
-.navkcal
-{
     display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    height: 100%;
-    margin-bottom: 80px;
-   
 }
-.main-lista
-{
+
+.topmenu {    
+    background-color: #f5f7f1; 
+    padding: 20px 100px;
+    justify-content: center;
+    display: flex;
+    height: 200px;
+    width: 100%;
+}
+
+.foodlist {
+    border: 2px solid #eceee8;
+    background-color: #eceee8;
+    word-wrap: break-word;
+    border-radius: 20px;
+    min-height: 52px;
+    font-size: 18px;
+    width: 100%
     
-    list-style-type: none;
+}
+
+.container {
+    background-color: #f5f7f1;    
+}
+
+.navkcal {
+    min-height: calc(100vh - 350px);
+    justify-content: center;
+    display: flex;
+    height: auto;
+}
+
+.main-lista {
+    margin-block: 2rem;
     font-family: "Poppins", sans-serif;
+    list-style-type: none;
+    color: #56724e;
     font-weight: 600;
     font-size: 22px;
-    color: rgb(86, 114, 78);
-    
-    
 }
 
-.button-list
-{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
+.button-list {
     background-color: #387141; 
-    color: white; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
     font-size: 30px; 
-    border: none; 
-    cursor: pointer; 
-    margin-left: 30px;
+    display: flex;
     outline: none; 
-
-    
-    
-        
+    color: #fff;
+    border: none; 
+    height: 32px;
+    width: 32px;
 }
 
-.button-list:hover
-{
-    background-color: rgb(89, 130, 86);
-    
+.button-list:not(:disabled):hover {
+    background-color: #598256;
+    cursor: pointer; 
 }
 
-
-
-.foodcontainer
-{
-    padding: 10px;
-    margin-left: 37px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-   
+.foodcontainer {
+    list-style-type: none;
+    padding: 1rem;   
 }
 
-.main-meal
-{
-   
-   margin-bottom: 30px;
+.main-meal {
+    flex-direction: column;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    width: 300px; 
 }
 
+.meal-container {
+    justify-content: space-between;   
+    display: flex;
+}
 
-.background
-{
+.background {
+    grid-template-areas: 'progress progress1 progress2 progress3';
     background-color: #f5f7f1;
-    
-    height: 150px;
-    
-    display: flex;
-    align-content: center;
-    margin: auto;
-    
-    
+    min-height: 150px;
+    display: grid;
+    height: auto;
+    width: 100%;
 }
+
 .progress-container {
-    display: flex;
+    font-family: "Poppins", sans-serif;
     flex-direction: column;
     align-items: center;
-    width: 300px; 
-    margin: auto;
-    padding: 30px;
-    font-size: 20px;
-    font-weight: 400;
-    font-family: "Poppins", sans-serif;
+    margin-inline: auto;
     color: #1b3d21;
-    
-
-  }
+    font-weight: 400;
+    font-size: 20px;
+    display: flex;
+    padding: 30px;
+    width: 300px; 
+}
   
-  .progress-label {
+.progress-label {
     margin-bottom: 3px; 
-
-  }
+}
   
-  .progress-bar {
-    height: 20px; 
-    width: 190px; 
+.progress-bar {
+    border: 1px solid #38714133;
     background-color: #cbd7cb;
-    border: 1px solid;
     border-radius: 15px;
-    border-color: #38714133;
     margin-top: 5px;
-    
-  }
+    width: 190px; 
+    height: 20px; 
+}
+
+.foodcontainer.hidden {
+    overflow: hidden;
+    height: 32px;
+}
+
+.foodcontainer.hidden li {
+    visibility: hidden
+}
   
-  
-  
-  
-  
+.progress-container._1 {
+    grid-area: progress
+}
+
+.progress-container._2 {
+    grid-area: progress1
+}
+
+.progress-container._3 {
+    grid-area: progress2
+}
+
+.progress-container._4 {
+    grid-area: progress3
+}
