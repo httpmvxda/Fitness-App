@@ -8,7 +8,7 @@
 }
 
 #container {
-    background-image: url(/images/background.png);
+    background-image: url("/images/background.png");
 }
 
 .logo {
@@ -41,6 +41,7 @@
     background-color: #eceee8;
     word-wrap: break-word;
     border-radius: 20px;
+    position: relative; 
     min-height: 52px;
     font-size: 18px;
     width: 100%
@@ -88,6 +89,7 @@
 
 .foodcontainer {
     list-style-type: none;
+    
     padding: 1rem;   
 }
 
