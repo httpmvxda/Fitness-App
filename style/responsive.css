@@ -1,0 +1,37 @@
+@media (width <= 1300px) {
+    .background {
+        grid-template-areas: 
+            'progress progress1'
+            'progress2 progress3'
+    }
+}
+
+@media (width <= 800px) {
+    .background {
+        grid-template-areas: 
+            'progress' 
+            'progress1'
+            'progress2' 
+            'progress3'
+    }
+}
+
+@media(width <= 500px) {
+    .logo {
+        width: 100%;
+    }
+
+    .topmenu {
+        padding: 0
+    }
+}
+
+@media (width <= 400px) {
+    .main-meal {
+        width: 100%;
+    }
+
+    .main-lista {
+        width: 90vw;
+    }
+}
