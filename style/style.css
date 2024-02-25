@@ -117,7 +117,7 @@
 
 .foodlist .choosen {
    position: absolute;
-   translate: 50% -50%;
+   translate: 10px -50%;
    top: 50%;
 }
 

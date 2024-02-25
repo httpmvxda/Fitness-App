@@ -51,6 +51,14 @@ function liHandler(target, chooseOption) {
 
     //Sprawdzanie parametru wyjscia
     if(!(chooseOption instanceof HTMLDivElement)) return alert("Podany parametr, który pokazuje wynik, jest nieprawidlowy")
+
+    //Wcyiaganie danych z parametru wejscia
+    const text = target.innerText?.trim() ?? ""
+    
+    //Zapis danych w paramatrze wyjscia
+    setTimeout(() => {
+        chooseOption.innerText = text.length > 28 ? text.slice(0, 28).trim() + "..." : text
+    }, 50)
     
 }
 
