@@ -4,11 +4,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
     
 }
 
 #container {
     background-image: url("/images/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .logo {
@@ -89,22 +93,57 @@
 
 .foodcontainer {
     list-style-type: none;
-    
     padding: 1rem;   
+}
+
+.foodcontainer li {
+    border: 2px solid #598256;
+    justify-content: center;
+    padding-inline: 1.2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    min-height: 150px;
+    display: flex;
+    transition: scale 0.2s;
+}
+
+.foodcontainer li:hover {
+    cursor: pointer;
+    scale: .95;
+    background-color: #598256;
+    color: #f5f7f1
+}
+
+.foodlist .choosen {
+   position: absolute;
+   translate: 50% -50%;
+   top: 50%;
+}
+
+.foodlist .choosen.hide {
+    display: none
+}
+
+.foodcontainer li:last-child {
+    margin-bottom: 0;
 }
 
 .main-meal {
     flex-direction: column;
     margin-bottom: 2rem;
+    position: relative;
     display: flex;
     gap: 0.5rem;
-    width: 300px; 
+    width: 400px;
+    
 }
 
 .meal-container {
     justify-content: space-between;   
     display: flex;
 }
+
 
 .background {
     grid-template-areas: 'progress progress1 progress2 progress3';

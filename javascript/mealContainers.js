@@ -38,6 +38,12 @@ window.addEventListener("click", e => {
 
             //Zamiana minus na plus
             mealButton.innerHTML = "&plus;"
+
+            //Wycuaganie wybranej opcji wybranej opcji
+            const chooseOption = mealContainers[i].querySelector(".choosen")
+
+            //Pokazywanie jej
+            chooseOption?.classList.remove("hide")
         }
     }
 })
@@ -69,13 +75,28 @@ function handleButton(mealContainer) {
     //Sprwdzanie czy taki element istnieje
     if(btn == null) return alert("Pozycja przycisku w podanej przez ciebie parametrze nie istnieje")
 
+    /**
+     * Wyciganie wybranego elementu
+     * @type {HTMLDivElement | null}
+    */
+    const choosenOption = mealContainer.querySelector(".choosen")
+
+    //Sprawdzanie czy taki element istnieje
+    if(choosenOption == null) return alert("Pozycjawybranego produktu w podanej przez ciebie parametrze nie istnieje")
+
     //Sprawdzanie czy lista nie jest otwarta
     if(list.classList.contains("hidden")) {
+        //Znikanie opcji wybranej
+        choosenOption.classList.add("hide")
+       
         //Usuwanie klasy ukrytej
         list.classList.remove("hidden")
 
         //Zamiana plus na minus
         btn.innerHTML = "&minus;"
+  
+        //przesuniecie do kontenera
+        mealContainer.scrollIntoView()
 
         //Zakonczenie funkcji
         return
@@ -83,6 +104,9 @@ function handleButton(mealContainer) {
 
     //Dodawanie klasy ukrywającej
     list.classList.add("hidden")
+
+    //Pokazywanie opcji wybranej
+    choosenOption.classList.remove("hide")
 
     //Zmiana minus na plus
     btn.innerHTML = "&plus;"
