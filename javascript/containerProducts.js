@@ -1,6 +1,10 @@
+
+//Definicja klucza bazy danych
+const KEY_DB = "products"
+
 /**
  * Definicja typu dla kontenera produktów
- * @typedef {{id: number, kcal: number, fat: number, protein: number, carbohydrates: number}} TProduct
+ * @typedef {{id: number, kcal: number, fat: number, protein: number, carbohydrates: number, uuid: string}} TProduct
  */
 
 //klasa odpowiedzialna za oblicznie i przchowywanie wybranych produktów
@@ -21,7 +25,35 @@ class ListProducts {
      */
     constructor(size) {
         this._size = size
+
+        //Pobieranie danych z bazy
+        const productsFromDatabase = localStorage.getItem(KEY_DB) 
+        
+        //Sprawdzanie czy sa dane w bazie
+        if(productsFromDatabase) {
+            this._load(productsFromDatabase)
+        }
     }
+
+    /**
+     * Funckja która odczytuje stan listy z bazy danych
+     * @param {string} data - dane pobrane z bazy
+    */
+    _load(data) {
+        if(!this.validateArray(data)) {
+            alert("Dane z bazy są nieprawidłowe, następuje reset bazy!")
+            localStorage.removeItem(KEY_DB)
+        }
+
+        //Zapis tych produktów do listy
+        this._products = JSON.parse(data)        
+    }
+
+    //Funkcja która zapisuje stan listy do bazy
+    _save() {
+        localStorage.setItem(KEY_DB, JSON.stringify(this._products))
+    } 
+     
 
     /**
      * Funkcja która przekazuje bład do wysietlenia
@@ -51,6 +83,8 @@ class ListProducts {
         if(!("fat" in product)) return false
         if(!("protein" in product)) return false
         if(!("carbohydrates" in product)) return false
+        if(!("uuid" in product)) return false
+       
 
         //Sprawdzenie typów danych
         if(typeof product.id !== "number") return false
@@ -58,6 +92,7 @@ class ListProducts {
         if(typeof product.protein !== "number") return false
         if(typeof product.fat !== "number") return false
         if(typeof product.carbohydrates !== "number") return false
+        if(typeof product.uuid !== "string") return false
         
         //Prawidłowa walidacja
         return true
@@ -83,8 +118,45 @@ class ListProducts {
         //Dodaj dane do kontenera
         this._products = [...this._products, product]
 
+        //Zapisz liste
+        this._save()
+
         //Zwróc instancje
         return this
+    }
+
+    /**
+     * Sprawdzanie tablicy produktów
+     * @param {unknown} data - dane do walidacji
+     * @returns {boolean}
+     */
+    validateArray(data) {
+        try {
+            if(typeof data !== "string") throw "Nieprawidłowe dane"
+
+            //Zamiana danych
+            const convertedData = JSON.parse(data)
+
+            //Validacja danych
+            if(!Array.isArray(convertedData)) throw "Dane nie są kontenerem"
+
+            //Badanie konretnych wartości w bazie danych
+            for(let i = 0; i < convertedData.length; i++) {
+                if(!this._checkProduct(convertedData[i])) throw "Dane w produkcie są nieprawidłowe!"
+            }
+
+            //Prawidłowa walidacja
+            return true
+
+        }
+
+        catch(e) {
+            //Informacja dla dewelopera
+            console.error(e)
+
+            //Bład w walidacji
+            return false
+        }
     }
 
     /** 
@@ -134,6 +206,9 @@ class ListProducts {
             if(productInArray.id == id) return product
             return productInArray
         })
+
+        //Zapisz liste
+        this._save()
 
         //Zwracanie instancji
         return this
