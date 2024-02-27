@@ -4,7 +4,7 @@ const KEY_DB = "products"
 
 /**
  * Definicja typu dla kontenera produktów
- * @typedef {{id: number, kcal: number, fat: number, protein: number, carbohydrates: number, uuid: string}} TProduct
+ * @typedef {{id: number, kcal: number, fat: number, protein: number, carbohydrates: number, uuid: string, date: string}} TProduct
  */
 
 //klasa odpowiedzialna za oblicznie i przchowywanie wybranych produktów
@@ -35,6 +35,11 @@ class ListProducts {
         }
     }
 
+    //Funkcja która oblicza zapelnienie paska
+    _calculate() {
+        console.log("is")
+    }
+
     /**
      * Funckja która odczytuje stan listy z bazy danych
      * @param {string} data - dane pobrane z bazy
@@ -46,7 +51,28 @@ class ListProducts {
         }
 
         //Zapis tych produktów do listy
-        this._products = JSON.parse(data)        
+        this._products = JSON.parse(data).filter(i => {
+            //Pobieranie aktualnej daty i daty stworzenia obiektu
+            const currentDate = new Date()
+            const date = new Date(i.date)
+
+            //Filtrowanie danych na podstawie dnia
+            return date.getFullYear() == currentDate.getFullYear() &&
+                date.getMonth() == currentDate.getMonth() &&
+                date.getDate() == currentDate.getDate()
+        })
+        
+        //Sprawdzanie czy dana jest pusta
+        if(this._products.length <= 0) {
+            localStorage.removeItem(KEY_DB)
+            return
+        }
+
+        //Zapis danych
+        this._save()
+
+        //Oblicz dane
+        this._calculate()
     }
 
     //Funkcja która zapisuje stan listy do bazy
@@ -84,6 +110,7 @@ class ListProducts {
         if(!("protein" in product)) return false
         if(!("carbohydrates" in product)) return false
         if(!("uuid" in product)) return false
+        if(!("date" in product)) return false
        
 
         //Sprawdzenie typów danych
@@ -93,6 +120,7 @@ class ListProducts {
         if(typeof product.fat !== "number") return false
         if(typeof product.carbohydrates !== "number") return false
         if(typeof product.uuid !== "string") return false
+        if(typeof product.date !== "string") return false
         
         //Prawidłowa walidacja
         return true
@@ -120,6 +148,9 @@ class ListProducts {
 
         //Zapisz liste
         this._save()
+
+        //Oblicz dane
+        this._calculate()
 
         //Zwróc instancje
         return this
@@ -152,7 +183,7 @@ class ListProducts {
 
         catch(e) {
             //Informacja dla dewelopera
-            console.error(e)
+            // console.error(e)
 
             //Bład w walidacji
             return false
@@ -201,6 +232,9 @@ class ListProducts {
             return this._showError("Nie ma takiego produktu!") 
         }
 
+        //Sprawdzanie czy nie wybrano tej samej opcji
+        if(this._products.find(item => item.uuid == product.uuid)) return this
+
         //Zamiana danych
         this._products = this._products.map(productInArray => {
             if(productInArray.id == id) return product
@@ -210,14 +244,17 @@ class ListProducts {
         //Zapisz liste
         this._save()
 
+        //Oblicz dane
+        this._calculate()
+
         //Zwracanie instancji
         return this
     }
 
     //Funkcja developerska sprawdzająca zawartość kontenera
-    toString() {
-        return JSON.stringify(this._products)
-    }
+    // toString() {
+    //     return JSON.stringify(this._products)
+    // }
 }
 
 

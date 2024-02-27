@@ -115,6 +115,7 @@ function liHandler(target, chooseOption, id) {
         uuid: String(uuid).toString(),
         kcal: Number(kcal).valueOf(), 
         fat: Number(fat).valueOf(), 
+        date: createDate(),
         id: id, 
      }
 
@@ -159,4 +160,25 @@ function isNumberAndInScope(data, maxSize) {
 
     //Prawidłowa walidacja
     return true
+}
+
+/**
+ * Funkcja która tworzy date
+ * @returns {`${string}-${string}-${string}`}
+ */
+function createDate() {
+    /**
+     * Funkcja która przekształca date na ładniejszą
+     * @param {number} nr - liczba
+     * @returns {string}
+     */
+    function convertDate(nr) {
+        return nr > 10 ? nr.toString() : "0" + nr.toString() 
+    }
+
+    //Pobieranie aktualnej daty
+    const date = new Date()
+    
+    //Generowanie daty
+    return `${date.getFullYear().toString()}-${convertDate(date.getMonth() + 1)}-${convertDate(date.getDate())}`
 }
