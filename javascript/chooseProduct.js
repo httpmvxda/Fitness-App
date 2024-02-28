@@ -104,6 +104,9 @@ function liHandler(target, chooseOption, id) {
 
     //Wcyiaganie danych z parametru wejscia
     const text = target.innerText?.trim() ?? ""
+
+    //Zapis danych
+    chooseOption.innerText = convertText(text)
     
     //Wyciganie danych z danych napisanych w wybranym produkcie
     const { fat, kcal, protein, carbohydrates, uuid } = target.dataset
@@ -118,11 +121,6 @@ function liHandler(target, chooseOption, id) {
         date: createDate(),
         id: id, 
      }
-
-    //Zapis danych w paramatrze wyjscia
-    setTimeout(() => {
-        chooseOption.innerText = convertText(text)
-    }, 50) 
 
     //Sprawdzanie czy dane istnieją w kontenerze
     if(products.contains(id)) {

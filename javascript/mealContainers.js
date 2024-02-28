@@ -82,7 +82,7 @@ function handleButton(mealContainer) {
     const choosenOption = mealContainer.querySelector(".choosen")
 
     //Sprawdzanie czy taki element istnieje
-    if(choosenOption == null) return alert("Pozycjawybranego produktu w podanej przez ciebie parametrze nie istnieje")
+    if(choosenOption == null) return alert("Pozycja wybranego produktu w podanej przez ciebie parametrze nie istnieje")
 
     //Sprawdzanie czy lista nie jest otwarta
     if(list.classList.contains("hidden")) {

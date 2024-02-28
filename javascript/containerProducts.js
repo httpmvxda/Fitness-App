@@ -37,7 +37,63 @@ class ListProducts {
 
     //Funkcja która oblicza zapelnienie paska
     _calculate() {
-        console.log("is")
+        /**
+         * pasek z węglowodanami
+         * @type {HTMLDivElement}
+         */
+        const carbohydratesBar = document.querySelector("[data-carbohydrates].progress-bar")
+
+        //Sprawdanie czy pasek istnieje
+        if(carbohydratesBar == null) return alert("Pasek z węglowodanami nie istnieje")
+
+        /**
+         * pasek z białkiem
+         * @type {HTMLDivElement}
+         */
+        const proteinBar = document.querySelector("[data-protein].progress-bar")
+
+        //Sprawdanie czy pasek istnieje
+        if(proteinBar == null) return alert("Pasek z białkiem nie istnieje")
+
+        /**
+         * pasek z Kaloriami
+         * @type {HTMLDivElement}
+         */
+        const kcalBar = document.querySelector("[data-kcal].progress-bar")
+
+        //Sprawdanie czy pasek istnieje
+        if(kcalBar == null) return alert("Pasek z kaloriami nie istnieje")
+        
+        /**
+         * pasek z tłuszczem
+         * @type {HTMLDivElement}
+         */
+        const fatBar = document.querySelector("[data-fat].progress-bar")
+
+        //Sprawdanie czy pasek istnieje
+        if(fatBar == null) return alert("Pasek z tłuszczami nie istnieje")
+
+
+        //Dodawanie wszystkiego
+        const {kcal, fat, protein, carbohydrates } = this._products.reduce((total, i) => 
+            ({
+                carbohydrates: total.carbohydrates + (i.carbohydrates ?? 0), 
+                protein: total.protein + (i.protein ?? 0), 
+                kcal: total.kcal + (i.kcal ?? 0), 
+                fat: total.fat + (i.fat ?? 0),  
+            }),{ 
+                carbohydrates: 0,
+                protein: 0, 
+                kcal: 0, 
+                fat: 0, 
+            })
+            
+
+        //Wstawianie danych do pasków
+        carbohydratesBar.style.setProperty("--width", `${Math.floor(Math.floor(carbohydrates * 100) / 200)}%`) 
+        proteinBar.style.setProperty("--width", `${Math.floor(Math.floor(protein * 100) / 100)}%`) 
+        kcalBar.style.setProperty("--width", `${Math.floor(Math.floor(kcal * 100) / 1000)}%`)
+        fatBar.style.setProperty("--width", `${Math.floor(Math.floor(fat * 100) / 100)}%` ) 
     }
 
     /**

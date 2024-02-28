@@ -174,10 +174,21 @@
 .progress-bar {
     border: 1px solid #38714133;
     background-color: #cbd7cb;
+    transition: width .3s linear; 
     border-radius: 15px;
+    position: relative;
     margin-top: 5px;
     width: 190px; 
     height: 20px; 
+}
+
+.progress-bar::before {
+    position: absolute;
+    background-color: #f00;
+    width: var(--width);
+    border-radius: 15px;
+    height: 100%;
+    content: ""
 }
 
 .foodcontainer.hidden {
@@ -204,3 +215,4 @@
 .progress-container._4 {
     grid-area: progress3
 }
+
